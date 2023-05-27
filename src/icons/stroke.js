@@ -1,6 +1,6 @@
 export default function Stroke({color}) {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width={31} height={50} fill="none">
+        <svg xmlns="http://www.w3.org/2000/svg" width={31} height={50} fill="none" style={{cursor: 'pointer'}}>
             <path
                 fill={color}
                 fillRule="evenodd"

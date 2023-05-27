@@ -226,7 +226,6 @@ a {
     height: 595px;
     padding: 75px;
     background: var(--dark-green);
-    cursor: pointer;
 }
 
 .carousel {
@@ -274,9 +273,11 @@ a {
 
 .stroke-container-left {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    justify-content: center;
     margin-left: 29px;
     width: 31px;
+    flex-direction: column;
 }
 
 .stroke-container-right {

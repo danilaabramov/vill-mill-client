@@ -51,10 +51,9 @@ export default function Registration() {
     }
 
     return (
-        <div style={{padding: '22px 75px 135px', background: '#015546', width: 'calc(100% - 150px)'}}
-             id='registration'>
+        <div style={{padding: '22px 75px 135px', background: '#015546', width: 'calc(100% - 150px)'}}>
             <div style={{height: '100%', width: '100%', border: '2px solid #87B44D'}}>
-                <div style={{
+                <div id='registration' style={{
                     fontWeight: 700,
                     margin: '83px 0 0 75px',
                     fontSize: 30
