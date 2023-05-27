@@ -55,7 +55,7 @@ const authSlice = createSlice({
     },
 });
 
-export const isAuth = ({auth}) => Boolean(auth.data?.user);
+export const isAuth = ({auth}) => Boolean(auth.data?.login);
 export const isAuthError = ({auth}) => auth.status === "error"
 export const authReducer = authSlice.reducer;
 export const {logout} = authSlice.actions;

@@ -20,7 +20,6 @@ export default function Card({img, name, price}) {
                     </div>
                 </div>
 
-
                 <div style={{display: 'flex', fontSize: 15, color: '#F3E7D4', height: 72, marginTop: -7}}>
                     <div style={{width: '50%', height: '100%', display: 'flex', alignItems: 'flex-start',
                         justifyContent: 'flex-end',flexDirection: 'column'}}>

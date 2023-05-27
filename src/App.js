@@ -4,7 +4,7 @@ import ButtonBar from "./components/ButtonBar";
 import MenuIcon from "./icons/menu";
 import HomePage from "./pages/HomePage";
 import Logo from "./icons/logo";
-import {fetchAuthMe, isAuth} from "./redux/slices/auth";
+import {fetchAuthMe, isAuth, logout} from "./redux/slices/auth";
 import {useDispatch, useSelector} from "react-redux";
 
 export default function App() {
@@ -19,9 +19,15 @@ export default function App() {
         return () => window.removeEventListener('resize', handleResize);
     }, [])
 
-
     const IsAuth = useSelector(isAuth);
     const {data} = useSelector(({auth}) => auth);
+
+    const handleLogout = () => {
+        if (window.confirm("Вы действительно хотите выйти?")) {
+            dispatch(logout())
+            window.localStorage.removeItem("token")
+        }
+    };
 
     return (<div className='App' style={{
         overflow: activeBar && windowWidth <= 720 ? 'hidden' : '',
@@ -66,7 +72,11 @@ export default function App() {
                                 </a>
                             </div>
                             :
-                            <div style={{fontSize: '23px'}}>{data?.fullName}</div>
+                            <div style={{display: 'flex'}}>
+                                <div style={{fontSize: '18px', fontWeight: 700}}>{data?.login}</div>
+                                <div style={{fontSize: '18px', fontWeight: 700, marginLeft: 20, cursor: 'pointer'}}
+                                onClick={handleLogout}>X</div>
+                            </div>
                     }
                 </div>
                 <div className='right-header-container'>

@@ -77,12 +77,13 @@ a {
 }
 
 .main-header-container {
-    width: calc(100% - 139px - 35px);
+    width: calc(100% - 139px - 70px);
     align-items: center;
     justify-content: right;
     display: flex;
     height: 75px;
     gap: 1%;
+    margin-right: 35px;
 }
 
 .header-container {
@@ -295,7 +296,7 @@ a {
 }
 
 .register-input {
-    width: calc(100% - 75px);
+    width: calc(100% - 105px);
     padding-left: 29px;
 }
 
