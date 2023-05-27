@@ -52,7 +52,25 @@ export default function App() {
                     {
                         !IsAuth && !window.localStorage.getItem("token") ?
                             <div className='main-header-links'>
-                                <a href="#registration">
+                                <Link to="/">
+                                    <div className='button-bar button-bar-mobile login-button-bar'>
+                                        <div className='text-button-bar'>
+                                            <div className='text-container-button-bar'>
+                                                Главная
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+                                <Link to="/catalog">
+                                    <div className='button-bar button-bar-mobile login-button-bar'>
+                                        <div className='text-button-bar'>
+                                            <div className='text-container-button-bar'>
+                                                Каталог
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+                                <a href="#registration" style={{marginLeft: 80}}>
                                     <div className='button-bar button-bar-mobile login-button-bar'>
                                         <div className='text-button-bar'>
                                             <div className='text-container-button-bar'>
@@ -72,10 +90,31 @@ export default function App() {
                                 </a>
                             </div>
                             :
-                            <div style={{display: 'flex'}}>
-                                <div style={{fontSize: '18px', fontWeight: 700}}>{data?.login}</div>
-                                <div style={{fontSize: '18px', fontWeight: 700, marginLeft: 20, cursor: 'pointer'}}
-                                onClick={handleLogout}>X</div>
+                            <div className="main-header-links">
+                                <Link to="/">
+                                    <div className='button-bar button-bar-mobile login-button-bar'>
+                                        <div className='text-button-bar'>
+                                            <div className='text-container-button-bar'>
+                                                Главная
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+                                <Link to="/catalog">
+                                    <div className='button-bar button-bar-mobile login-button-bar'>
+                                        <div className='text-button-bar'>
+                                            <div className='text-container-button-bar'>
+                                                Каталог
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+                                <div style={{marginTop: 5, display: 'flex'}}>
+                                    <div style={{fontSize: '18px', marginLeft: 80, fontWeight: 700}}>{data?.login}</div>
+                                    <div style={{fontSize: '18px', fontWeight: 700, marginLeft: 20, cursor: 'pointer'}}
+                                         onClick={handleLogout}>X
+                                    </div>
+                                </div>
                             </div>
                     }
                 </div>
@@ -88,6 +127,12 @@ export default function App() {
 
             <div className={activeBar ? 'top-active-mobile-buttons' : 'top-mobile-buttons'}>
                 <div>
+                    <Link to="/" onClick={() => setActiveBar(a => !a)}>
+                        <ButtonBar text='Главная' menu/>
+                    </Link>
+                    <Link to="/catalog" onClick={() => setActiveBar(a => !a)}>
+                        <ButtonBar text='Каталог' menu/>
+                    </Link>
                     <a href="#registration" onClick={() => setActiveBar(a => !a)}>
                         <ButtonBar text='Войти' menu/>
                     </a>
@@ -102,10 +147,13 @@ export default function App() {
             <div className='main-container'>
                 <Routes>
                     <Route path="/" exact element={<HomePage/>}/>
-                    {/*<Route path="/consulting" exact element={<ConsultingPage/>}/>*/}
-                    {/*<Route path="/banks" exact element={<BanksPage/>}/>*/}
-                    {/*<Route path="/state" exact element={<StatePage/>}/>*/}
-                    {/*<Route path="/b2b-purchases" exact element={<B2BPurchasesPage/>}/>*/}
+                    <Route path="/catalog" element={
+                        <div style={{width: '100vw', minHeight: 1000, background: '#015546', display: 'flex',
+                       alignItems: 'center', flexDirection: 'column'}}>
+                            <div style={{fontSize: 40, marginTop: 75}}>Скоро здесь будет каталог ...</div>
+                            <img style={{width: 700}} src={require('./images/tech.png')} alt=""/>
+                        </div>
+                    }/>
                 </Routes>
             </div>
 

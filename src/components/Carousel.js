@@ -54,8 +54,7 @@ export default function Carousel() {
                                 базе.
                             </div>
 
-                            {/*<Link to="/catalog">*/}
-                            <a href="#catalog">
+                            <Link to="/catalog">
                                 <div className='button-bar register-button-bar'>
                                     <div className='text-button-bar'>
                                         <div className='text-container-button-bar'>
@@ -63,8 +62,7 @@ export default function Carousel() {
                                         </div>
                                     </div>
                                 </div>
-                            </a>
-                            {/*</Link>*/}
+                            </Link>
                         </div>
                     </div>
 
