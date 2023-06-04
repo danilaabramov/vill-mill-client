@@ -30,8 +30,8 @@ export default function App() {
     };
 
     return (<div className='App' style={{
-        overflow: activeBar && windowWidth <= 720 ? 'hidden' : '',
-        height: activeBar && windowWidth <= 720 ? '100vh' : ''
+        overflow: activeBar && windowWidth <= 920 ? 'hidden' : '',
+        height: activeBar && windowWidth <= 920 ? '100vh' : ''
     }}>
 
         <header className={activeBar ? 'active-header' : 'header'}>
@@ -143,7 +143,7 @@ export default function App() {
             </div>
         </header>
 
-        <main className='main' style={{paddingTop: activeBar && windowWidth <= 720 ? 75 : 0}}>
+        <main className='main' style={{paddingTop: activeBar && windowWidth <= 920 ? 75 : 0}}>
             <div className='main-container'>
                 <Routes>
                     <Route path="/" exact element={<HomePage/>}/>
