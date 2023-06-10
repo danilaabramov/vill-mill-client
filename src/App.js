@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import Logo from "./icons/logo";
 import {fetchAuthMe, isAuth, logout} from "./redux/slices/auth";
 import {useDispatch, useSelector} from "react-redux";
+import { HashLink } from 'react-router-hash-link';
 
 export default function App() {
     const dispatch = useDispatch();
@@ -70,7 +71,7 @@ export default function App() {
                                         </div>
                                     </div>
                                 </Link>
-                                <a href="#registration" style={{marginLeft: 80}}>
+                                <HashLink smooth to="/#registration" style={{marginLeft: 80}}>
                                     <div className='button-bar button-bar-mobile login-button-bar'>
                                         <div className='text-button-bar'>
                                             <div className='text-container-button-bar'>
@@ -78,8 +79,8 @@ export default function App() {
                                             </div>
                                         </div>
                                     </div>
-                                </a>
-                                <a href="#registration">
+                                </HashLink>
+                                <HashLink smooth to="/#registration">
                                     <div className='button-bar button-bar-mobile register-button-bar'>
                                         <div className='text-button-bar'>
                                             <div className='text-container-button-bar'>
@@ -87,7 +88,7 @@ export default function App() {
                                             </div>
                                         </div>
                                     </div>
-                                </a>
+                                </HashLink>
                             </div>
                             :
                             <div className="main-header-links">
@@ -133,12 +134,12 @@ export default function App() {
                     <Link to="/catalog" onClick={() => setActiveBar(a => !a)}>
                         <ButtonBar text='Каталог' menu/>
                     </Link>
-                    <a href="#registration" onClick={() => setActiveBar(a => !a)}>
+                    <HashLink smooth to="/#registration" onClick={() => setActiveBar(a => !a)}>
                         <ButtonBar text='Войти' menu/>
-                    </a>
-                    <a href="#registration" onClick={() => setActiveBar(a => !a)}>
+                    </HashLink>
+                    <HashLink smooth to="/#registration" onClick={() => setActiveBar(a => !a)}>
                         <ButtonBar text='Регистрация' menu/>
-                    </a>
+                    </HashLink>
                 </div>
             </div>
         </header>
@@ -160,4 +161,3 @@ export default function App() {
         </main>
     </div>);
 }
-
